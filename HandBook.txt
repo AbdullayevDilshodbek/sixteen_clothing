@@ -1,2 +1,2 @@
-First of all, you can create database on mysql and you must name "yii2_sixteen_clothing". And you do write this code "php yii migrate" to terminal(of xamp,lamp or openserver).
+First of all, you can create database on mysql and you must give name "yii2_sixteen_clothing". And you do write this code "php yii migrate" to terminal(of xamp,lamp or openserver).
 Last step is create admin manuale to yii_admin table.
