@@ -75,8 +75,8 @@ class ProductController extends Controller
             $image = UploadedFile::getInstance($model, 'img');
             $image->saveAs('uploads/' . $image->baseName . "." . $image->extension);
             $model->img = $image->baseName . "." . $image->extension;
-            $model->added_date = date("Y-m-d");
             $model->save();
+            $model->added_date = date("Y-m-d");
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

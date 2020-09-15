@@ -8,8 +8,8 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="category-form">
 
+<div class="category-form" >
     <?php $form = ActiveForm::begin(); ?>
 
 <!--    --><?//= $form->field($model, 'id')->textInput() ?>

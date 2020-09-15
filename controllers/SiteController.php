@@ -142,7 +142,7 @@ class SiteController extends Controller
         $user = new User();
 
         if ($product->load(Yii::$app->request->post())){
-            $profit = $product->price - $product->cost * $product->description;
+            $profit = ($product->price * $product->discount - $product->cost) * $product->description;
             $trading->addSale($id,$product->description,$product->price,$profit,$product->discount,$user->getUser());
             if(!$trading->save()){
                 \yii\helpers\VarDumper::dump($trading->getErrors(),10,true); die;
@@ -167,7 +167,7 @@ class SiteController extends Controller
         $user = new User();
 
         if ($product->load(Yii::$app->request->post())) {
-            $profit = $product->price - $product->cost * $product->description;
+            $profit = $product->price - ($product->cost * $product->description);
             $trading->addSale($product->id, $product->description, $product->price, $profit, $product->discount, $user->getUser());
             if (!$trading->save()) {
                 \yii\helpers\VarDumper::dump($trading->getErrors(), 10, true);

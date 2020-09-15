@@ -23,9 +23,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     href="<?= Yii::$app->urlManager->createUrl(['admin/category']) ?>">Category</a> </span>
         <span style="margin-left: 10px"><a href="<?= Yii::$app->urlManager->createUrl(['admin/trading']) ?>">Trading</a> </span>
     </div>
-    <p>
-        <?= Html::a('Create Trading', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+<!--    <p>-->
+<!--        --><?//= Html::a('Create Trading', ['create'], ['class' => 'btn btn-success']) ?>
+<!--    </p>-->
     <?php Pjax::begin(); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

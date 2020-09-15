@@ -71,7 +71,9 @@ class AdminController extends Controller
     {
         $model = new Admin();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->generateAuthKey();
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

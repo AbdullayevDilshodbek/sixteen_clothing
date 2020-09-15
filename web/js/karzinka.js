@@ -40,10 +40,10 @@ total_pay = (product_price,product_discount,id) =>{
     // alert(count)
       document.getElementById(id).value = product_price * count * ((100 - product_discount)/100)
 }
-
 clear = () =>{
-    alert('sdssds')
+    alert('Ma`lumotlar tozalandi')
     localStorage.clear()
 }
+
 
 

@@ -34,7 +34,7 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
             [['status'], 'integer'],
             [['login', 'password'], 'string', 'max' => 50],
             [['login', 'password'],'required'],
-            [['authKey', 'accessToken'], 'string', 'max' => 255],
+            [['authKey',], 'string', 'max' => 255],
         ];
     }
 
@@ -49,7 +49,7 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
             'password' => 'Parol',
             'status' => 'Maqom',
             'authKey' => 'Auth Key',
-            'accessToken' => 'Access Token',
+//            'accessToken' => 'Access Token',
         ];
     }
 
@@ -91,5 +91,12 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
         else{
             return 0;
         }
+    }
+
+    public function generateAuthKey()
+    {
+        $this->accessToken = Yii::$app->security->generateRandomString();
+        $this->authKey = Yii::$app->security->generateRandomString();
+//        $this->authKey = 'kshdksh';
     }
 }
